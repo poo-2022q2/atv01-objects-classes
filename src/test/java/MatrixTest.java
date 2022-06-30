@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.Locale;
 import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -7,6 +8,10 @@ import org.junit.jupiter.api.Test;
  * Tests for Matrix class.
  */
 public class MatrixTest {
+
+    public MatrixTest() {
+        Locale.setDefault(Locale.US);
+    }
 
     private static final String globalFile = "src/test/resources/matrix.txt";
     private static final String symmetricFile = "src/test/resources/matrix-symmetric.txt";

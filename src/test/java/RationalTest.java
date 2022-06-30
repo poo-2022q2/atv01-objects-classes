@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Locale;
 import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,10 @@ import org.junit.jupiter.api.Test;
  */
 public class RationalTest {
     private static final String rationalTestCases = "src/test/resources/rationals.txt";
+
+    public RationalTest() {
+        Locale.setDefault(Locale.US);
+    }
 
     @Test
     public void testRationals() {
