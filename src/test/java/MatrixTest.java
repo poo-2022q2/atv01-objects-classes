@@ -95,11 +95,21 @@ public class MatrixTest {
                 Assertions.assertTrue(areEqual(ta, a.transpose()),
                     String.format("%s. Wrong transpose result. "
                         + "Matrix: \n%s. "
-                        + "Transpose: \n%s\n", caseName, toString(a), toString(a.transpose())));
+                        + "Transpose (result): \n%s\n"
+                        + "Transpose (expected): \n%s\n",
+                        caseName,
+                        toString(a),
+                        toString(a.transpose()),
+                        toString(ta)));
                 Assertions.assertTrue(areEqual(tb, b.transpose()),
                     String.format("%s. Wrong transpose result. "
                         + "Matrix: \n%s. "
-                        + "Transpose: \n%s\n", caseName, toString(b), toString(b.transpose())));
+                        + "Transpose: \n%s\n"
+                        + "Transpose (expected): \n%s\n",
+                        caseName,
+                        toString(b),
+                        toString(b.transpose()),
+                        toString(tb)));
 
                 // binary operators
                 Assertions.assertTrue(areEqual(aaPlusB, a.plus(b)),
@@ -138,20 +148,35 @@ public class MatrixTest {
                     String.format("%s. Wrong multiplication by scalar result. \n"
                             + "Matrix: \n%s. "
                             + "Scalar: \n%.6f. "
-                            + "Result: \n%s\n", caseName, toString(a), scalar,
-                        toString(a.times(scalar))));
+                            + "Result: \n%s\n"
+                            + "Expected: \n%s\n",
+                        caseName,
+                        toString(a),
+                        scalar,
+                        toString(a.times(scalar)),
+                        toString(aaTimesScalar)));
                 Assertions.assertTrue(areEqual(bbTimesScalar, b.times(scalar)),
                     String.format("%s. Wrong multiplication by scalar result. "
                             + "Matrix: \n%s. "
                             + "Scalar: \n%.6f. "
-                            + "Result: \n%s\n", caseName, toString(b), scalar,
-                        toString(b.times(scalar))));
+                            + "Result: \n%s\n"
+                            + "Expected: \n%s\n",
+                        caseName,
+                        toString(b),
+                        scalar,
+                        toString(b.times(scalar)),
+                        toString(bbTimesScalar)));
                 Assertions.assertTrue(areEqual(aaTimesC, a.times(c)),
                     String.format("%s. Wrong multiplication result. "
                             + "Matrix A: \n%s. "
                             + "Matrix C: \n%s. "
-                            + "A * C: \n%s\n", caseName, toString(a), toString(c),
-                        toString(a.times(c))));
+                            + "A * C (Result): \n%s\n"
+                            + "A * C (expected): \n%s\n",
+                        caseName,
+                        toString(a),
+                        toString(c),
+                        toString(a.times(c)),
+                        toString(aaTimesC)));
 
                 // predicates
                 Assertions.assertEquals(aaIsSquare, a.isSquare(),
